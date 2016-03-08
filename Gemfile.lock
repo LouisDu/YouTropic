@@ -38,8 +38,13 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.3.3.1)
+      execjs
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.2)
     carrierwave (0.10.0)
@@ -172,6 +177,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-sass (4.5.0)
+      sass (>= 3.2)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -198,6 +205,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
+    puma (3.0.2)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -220,6 +228,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.4)
     railties (4.2.5.1)
       actionpack (= 4.2.5.1)
       activesupport (= 4.2.5.1)
@@ -242,6 +255,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -276,18 +292,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
   figaro
   fog
+  font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
   pg (~> 0.15)
+  puma
   rails (= 4.2.5.1)
+  rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_form
   slim
   spring
   turbolinks
