@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20160308114502) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "photo"
   end
 
   add_index "places", ["category_id"], name: "index_places_on_category_id", using: :btree
