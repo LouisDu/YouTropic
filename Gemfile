@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'carrierwave'
+gem 'figaro'
+gem 'fog'
+gem 'mini_magick'
+gem 'slim'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
