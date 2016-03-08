@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'ruby'
+gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'figaro'
 gem 'fog'
