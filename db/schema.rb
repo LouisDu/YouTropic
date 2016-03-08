@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20160308114502) do
     t.date     "checkin"
     t.date     "checkout"
     t.integer  "bill"
-    t.boolean  "validated"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "nb_of_traveller"
+    t.boolean  "validated",       default: false
   end
 
   add_index "bookings", ["place_id"], name: "index_bookings_on_place_id", using: :btree
