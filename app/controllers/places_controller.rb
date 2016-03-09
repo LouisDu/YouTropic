@@ -4,6 +4,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    render :index, layout: "index"
   end
 
   def show
