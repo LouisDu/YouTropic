@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308114502) do
+ActiveRecord::Schema.define(version: 20160309130618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20160308114502) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.string   "name"
     t.integer  "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,13 +64,21 @@ ActiveRecord::Schema.define(version: 20160308114502) do
   add_index "places", ["category_id"], name: "index_places_on_category_id", using: :btree
   add_index "places", ["user_id"], name: "index_places_on_user_id", using: :btree
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+  create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone_number"
-    t.string   "photo"
+    t.string   "profile_picture"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -92,4 +99,5 @@ ActiveRecord::Schema.define(version: 20160308114502) do
   add_foreign_key "pictures", "places"
   add_foreign_key "places", "categories"
   add_foreign_key "places", "users"
+  add_foreign_key "profiles", "users"
 end

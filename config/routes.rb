@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :pictures, only: [:new, :create]
   end
   resources :booking, only: [:destroy]
-  resources :user, only: [:index, :show, :new, :create]
+  resources :profile, only: [:show, :edit, :update]
 end
