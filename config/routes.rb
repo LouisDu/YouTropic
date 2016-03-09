@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'places#index'
+  devise_for :users
+  resources :profiles, only: :show
+  resources :users do
+    resources :profiles, only: [:edit, :update]
+  end
+
   resources :places, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :destroy]
     resources :pictures, only: [:new, :create]
   end
-  resources :booking, only: [:destroy]
-  resources :profile, only: [:show, :edit, :update]
 end
