@@ -1,3 +1,5 @@
+<!-- Il faut overider pour quelle soit transparente au dessus de la banner -->
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -27,9 +29,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><%= link_to 'Place Index', places_path %> </li>
         <li><%= link_to 'Place New', new_place_path %> </li>
-        <li><%= link_to 'Sign up', new_user_registration_path %> </li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </li>
-        <li><%= link_to 'Sign in', new_user_session_path %> </li>
+        <li><%= link_to 'User New', new_user_path %> </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
