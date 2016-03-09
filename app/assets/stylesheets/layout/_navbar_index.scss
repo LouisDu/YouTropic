@@ -1,0 +1,41 @@
+/* Main class */
+.my-navbar {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  position: fixed;
+  height: 80px;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    a {
+      font-size: 24px;
+      text-decoration: none;
+      img {
+        width: 80px;
+      }
+    }
+  }
+}
+
+
+
+.brand-name {
+  position: absolute;
+  left: 80px;
+}
+
+.my-navbar .item {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  font-size: 14px;
+  border: 2px solid #2172D3;
+  border-radius: 20em;
+  line-height: 30px;
+  background-color: #2172D3;
+}

@@ -1,0 +1,45 @@
+<!-- Banner -->
+<div class="banner" style="background: linear-gradient(-200deg, rgb(50, 50, 50) -3%, rgba(100, 100, 100, 0) 53%), url(<%= image_path 'Image_cabane_banner.jpg' %>); background-size: cover;">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2 padding-large">
+      <h1>Typical make it atypical</h1>
+      <p>Rent Dreamed places arround the world</p>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="location">Dream location</label>
+          <input type="text" class="form-control" id="lacation" placeholder="Top of my Garden">
+        </div>
+        <div class="form-group">
+          <label for="checkin">Chech In</label>
+          <input type="email" class="form-control" id="checkin" placeholder="01/01/16">
+        </div>
+        <div class="form-group">
+          <label for="checkout">Check Out</label>
+          <input type="date" class="form-control" id="checkout" placeholder="31/12/16">
+        </div>
+        <button type="submit" class="btn btn-primary">Enjoy</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container padding-large">
+  <div class="row">
+    <div class="col-xs-4 category" style="background: linear-gradient(-200deg, rgb(50, 50, 50) -3%, rgba(100, 100, 100, 0) 53%), url(<%= image_path 'cabane.jpg' %>); background-size: cover;">
+      <h1>Air</h1>
+    </div>
+    <div class="col-xs-4 category" style="background: linear-gradient(-200deg, rgb(50, 50, 50) -3%, rgba(100, 100, 100, 0) 53%), url(<%= image_path 'Image_cabane_banner.jpg' %>); background-size: cover;">
+      <h1>Terre</h1>
+    </div>
+    <div class="col-xs-4 category" style="background: linear-gradient(-200deg, rgb(50, 50, 50) -3%, rgba(100, 100, 100, 0) 53%), url(<%= image_path 'Image_cabane_banner.jpg' %>); background-size: cover;">
+      <h1>Mer</h1>
+    </div>
+  </div>
+</div>
+
+<h1>Welcome to the place index</h1>
+
+<% @places.each do |place| %>
+  <%= place.name %>
+<% end %>
+
