@@ -1,4 +1,56 @@
-h1 Welcome to the place index
+.container
+  .row
+    .col-md-6.col-sm-12
+      form
+        h5 Dates
+        .col-md-4.col-sm-12
+          input type="text"
+        .col-md-4.col-sm-12
+          input type="text"
+        .col-md-4.col-sm-12
+          input type="text"
+        h5 Type de logement
+        .col-md-4.col-sm-12
+          = simple_form_for @place do |f|
+            = f.association :category,
+                            :collection => @place.category,
+                            :label => :Mer,
+                            :include_blank => false,
+                            :as => :boolean,
+                            :required => false
+        .col-md-4.col-sm-12
+          = simple_form_for @place do |f|
+            = f.association :category,
+                            :collection => @place.category,
+                            :label => :Terre,
+                            :include_blank => false,
+                            :as => :boolean,
+                            :required => false
+        .col-md-4.col-sm-12
+          = simple_form_for @place do |f|
+            = f.association :category,
+                            :collection => @place.category,
+                            :label => :Air,
+                            :include_blank => false,
+                            :as => :boolean,
+                            :required => false
+        h5 Fourchette de prix
+        .col-md-6.col-sm-12
+          input type="text"
+        .col-md-6.col-sm-12
+          input type="text"
 
-- @places.each do |place|
-  = place.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
