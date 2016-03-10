@@ -19,8 +19,14 @@
           <li><%= link_to 'Become Host', new_place_path %> </li>
           <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </li>
           <li>
-            <%= link_to profile_path(current_user), class: "navbar-wagon-brand" do %>
-              <%= image_tag current_user.profile.profile_picture %>
+            <% if @profile.profile_picture.presence %>
+              <%= link_to profile_path(current_user), class: "navbar-wagon-brand" do %>
+                <%= image_tag current_user.profile.profile_picture %>
+              <% end %>
+            <% else %>
+              <%= link_to profile_path(current_user), class: "navbar-wagon-brand" do %>
+                <%= image_tag ('steve.png') %>
+              <% end %>
             <% end %>
           </li>
         </ul>
