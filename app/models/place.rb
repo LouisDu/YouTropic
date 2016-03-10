@@ -2,10 +2,10 @@ class Place < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :users, through: :bookings
-  has_many :pictures, dependent: :destroy
   has_many :bookings, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :street_changed?
+  mount_uploader :photo, PhotoUploader
 
   validates :name, presence: true
   validates :category, presence: true
