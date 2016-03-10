@@ -9,6 +9,7 @@
       <li>Category: <%= @place.category.name %></li>
       <li>A few words about my place: <%= @place.description %></li>
     </ul>
+    <%= image_tag @place.photo, :class => "img_show"  %>
   </div>
 
   <div class="col-xs-12 col-md-6">

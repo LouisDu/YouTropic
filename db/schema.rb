@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310132233) do
+ActiveRecord::Schema.define(version: 20160310175051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,15 +40,6 @@ ActiveRecord::Schema.define(version: 20160310132233) do
     t.boolean  "air"
   end
 
-  create_table "pictures", force: :cascade do |t|
-    t.integer  "place_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "photo"
-  end
-
-  add_index "pictures", ["place_id"], name: "index_pictures_on_place_id", using: :btree
-
   create_table "places", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_id"
@@ -64,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160310132233) do
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "photo"
   end
 
   add_index "places", ["category_id"], name: "index_places_on_category_id", using: :btree
@@ -101,7 +93,6 @@ ActiveRecord::Schema.define(version: 20160310132233) do
 
   add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "users"
-  add_foreign_key "pictures", "places"
   add_foreign_key "places", "categories"
   add_foreign_key "places", "users"
   add_foreign_key "profiles", "users"
