@@ -8,14 +8,17 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile.update(profile_params)
-    redirect_to profile_path
+    if @profile.update(profile_params)
+      redirect_to profile_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def profile_params
-   params.require(:profile).permit(:first_name, :last_name, :phone_number, :profile_picture)
+   params.require(:profile).permit(:first_name, :last_name, :phone_number, :profile_picture, :profile_picture_cache)
   end
 
   def set_profile
