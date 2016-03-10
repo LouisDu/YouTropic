@@ -7,7 +7,7 @@
       <% if @profile.profile_picture.presence %>
           <%= image_tag image_path(@profile.profile_picture), {class: "avatar-profile"}%>
       <% else %>
-        <%= image_tag ('steve.png')%>
+        <%= image_tag ('steve.png'), {class: "avatar-profile"}%>
       <% end %>
     </div>
 </div>
