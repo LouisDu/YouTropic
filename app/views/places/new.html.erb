@@ -11,7 +11,6 @@
         <%= f.input :street, input_html: { id: 'user_input_autocomplete_address' }, placeholder: 'Start typing your address' %>
         <%= f.association :category %>
         <%= f.input :description, as: :text, placeholder: 'My place is ...'%>
-        <%= f.input :pictures, multiple: true %>
         <%= f.button :submit %>
       <% end %>
     </div>
