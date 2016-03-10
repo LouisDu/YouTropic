@@ -8,6 +8,11 @@ class PlacesController < ApplicationController
 
   def show
     @user = current_user
+    @markers = Gmaps4rails.build_markers(@place) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+      marker.infowindow render_to_string(:partial => '/shared/map_box', locals: {place: place})
+    end
   end
 
   def new
@@ -18,7 +23,6 @@ class PlacesController < ApplicationController
     @user = current_user
     @place = @user.places.build(place_params)
     if @place.save
-      flash[:notice] = "You're place has been saved."
       redirect_to @place
     else
       render :new
@@ -42,7 +46,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :category_id, :capacity, :price, :street, :city, :zipcode, :country, :description, :user_id, pictures: [])
+    params.require(:place).permit(:name, :category_id, :capacity, :price, :street, :city, :zipcode, :country, :description, :user_id, :photo)
   end
 
   def set_place
