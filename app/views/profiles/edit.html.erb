@@ -1,3 +1,45 @@
-<h1>Your profile</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
+      <h1>Edit my profile</h1>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 padded">
+      <%= simple_form_for(@profile) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :phone_number %>
+      <%= f.input :profile_picture %>
+      <%= f.input :profile_picture, as: :hidden %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="row padding-medium">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= simple_form_for @place do |f| %>
+        <%= f.input :name, :label => 'Place name', placeholder: 'An amazing place name'%>
+        <%= f.input :capacity, as: :integer, placeholder: 'How many people can sleep there'%>
+        <%= f.input :price, as: :integer, placeholder: 'Price for a night'%>
+        <%= f.input :street, placeholder: 'Street'%>
+        <%= f.input :city, placeholder: 'City'%>
+        <%= f.input :zipcode, as: :integer, placeholder: 'Zipcode'%>
+        <%= f.input :country, as: :string, placeholder: 'Country'%>
+        <p><strong>Choose the category</strong></p>
+        <%= f.association :category,
+                          :collection => @place.category,
+                          :label => :Air,
+                          :include_blank => false,
+                          :as => :boolean,
+                          :required => false %>
+        <%= f.association :category, placeholder: 'choose the category'%>
+        <%= f.button :submit %>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="padding-medium"></div>
