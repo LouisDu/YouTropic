@@ -7,5 +7,5 @@ CarrierWave.configure do |config|
  }
 
  config.fog_directory    = ENV['AWS_S3_BUCKET_NAME']
- config.fog_public       = false  # <- Private URLS (with expiration) are generated
+ config.fog_public       = true
 end

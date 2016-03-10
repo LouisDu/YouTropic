@@ -1,26 +1,30 @@
-<h1>Your profile</h1>
+<div class='col-xs-offset-1'>
+  <h1>Your profile</h1>
+</div>
 
-<div class='container'>
-  <div class='row'>
-    <div class='col-xs-4 col-xs-offset-4 avatar-large' >
-    <% if @profile.profile_picture.presence %>
-    <%= cl_image_tag image_path(@profile.profile_picture), height: 150, width: 300, crop: :fill %>
-    <% end %>
+<div class='row'>
+    <div class='col-xs-4 col-xs-offset-1 ' >
+      <% if @profile.profile_picture.presence %>
+          <%= image_tag image_path(@profile.profile_picture), {class: "avatar-profile"}%>
+      <% else %>
+        <%= image_tag ('steve.png')%>
+      <% end %>
     </div>
-  </div>
-  <div class='row'>
-    <div class='col-xs-12'>
-      <p> First name: <%= @profile.first_name || "" %></p>
-      <p> Last name: <%= @profile.last_name || "" %></p>
-      <p> Phone Number: <%= @profile.phone_number || "" %></p>
-    </div>
+</div>
+
+<div class='row'>
+  <div class='col-xs-4 col-xs-offset-1'>
+    <p> First name <%= @profile.first_name || "" %></p>
+    <p> Last name <%= @profile.last_name || "" %></p>
+    <p> Phone Number <%= @profile.phone_number || "" %></p>
   </div>
 </div>
 
-<div>
-  <%= link_to edit_user_profile_path(@profile.user, @profile), {class: "btn btn-primary"} do %>
+<div class='row'>
+  <div class='col-xs-4 col-xs-offset-1 '>
+    <%= link_to edit_user_profile_path(@profile.user, @profile), {class: "btn btn-primary form-btn "} do %>
   <h4>Edit your profile </h4>
-  <% end %>
+<% end %>
+  </div>
 </div>
-
 
