@@ -8,16 +8,13 @@
         <%= f.input :name, :label => 'Place name', placeholder: 'An amazing place name'%>
         <%= f.input :capacity, as: :integer, placeholder: 'How many people can sleep there'%>
         <%= f.input :price, as: :integer, placeholder: 'Price for a night'%>
-        <%= f.input :street, placeholder: 'Street'%>
-        <%= f.input :city, placeholder: 'City'%>
-        <%= f.input :zipcode, as: :string, placeholder: 'Zipcode'%>
-        <%= f.input :country, as: :string, placeholder: 'Country'%>
+        <%= f.input :street, input_html: { id: 'user_input_autocomplete_address' }, placeholder: 'Start typing your address' %>
         <%= f.association :category %>
         <%= f.input :description, as: :text, placeholder: 'My place is ...'%>
         <%= f.input :pictures, multiple: true %>
         <%= f.button :submit %>
       <% end %>
-
     </div>
   </div>
 </div>
+
