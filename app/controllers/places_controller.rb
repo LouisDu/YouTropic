@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @user = current_user
   end
 
   def new
@@ -14,8 +15,10 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(place_params)
+    @user = current_user
+    @place = @user.places.build(place_params)
     if @place.save
+      flash[:notice] = "You're place has been saved."
       redirect_to @place
     else
       render :new
@@ -39,7 +42,7 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :category_id, :capacity, :price, :street, :city, :zipcode, :country, :description, :user_id)
+    params.require(:place).permit(:name, :category_id, :capacity, :price, :street, :city, :zipcode, :country, :description, :user_id, pictures: [])
   end
 
   def set_place

@@ -1,17 +1,23 @@
-  <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
-      <form>
-        <div>
-          <input type="text" class="form-control input" id="location" placeholder="Location">
-        </div>
-        <div >
-          <input type="date" class="form-control input" id="checkin" placeholder="Check in">
-        </div>
-        <div >
-          <input type="date" class="form-control input" id="checkout" placeholder="Check out">
-        </div>
-        <button type="submit" class="btn input-btn">Enjoy</button>
-      </form>
+<div class="text-center">
+
+  <h1>Create a new place</h1>
+
+  <div class="row padding-medium">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 new-place-form">
+      <%= simple_form_for @place do |f| %>
+        <%= f.input :name, :label => 'Place name', placeholder: 'An amazing place name'%>
+        <%= f.input :capacity, as: :integer, placeholder: 'How many people can sleep there'%>
+        <%= f.input :price, as: :integer, placeholder: 'Price for a night'%>
+        <%= f.input :street, placeholder: 'Street'%>
+        <%= f.input :city, placeholder: 'City'%>
+        <%= f.input :zipcode, as: :string, placeholder: 'Zipcode'%>
+        <%= f.input :country, as: :string, placeholder: 'Country'%>
+        <%= f.association :category %>
+        <%= f.input :description, as: :text, placeholder: 'My place is ...'%>
+        <%= f.input :pictures, multiple: true %>
+        <%= f.button :submit %>
+      <% end %>
+
     </div>
   </div>
 </div>
