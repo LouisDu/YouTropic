@@ -38,7 +38,7 @@
        <div class="card">
          <div class="card-link">
            <%= link_to place_path(place) do %>
-           <div class="card-bg" style="background: url(<%= image_path 'niche.jpg'%>); background-size: cover;">
+           <div class="card-bg" style="background: url(<%= place.photo if place.photo.presence %>); background-size: cover;">
              <div class="card-text text-center padded">
                <h1><%= place.name%></h1>
              </div>
