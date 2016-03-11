@@ -1,3 +1,9 @@
+
+.img_show {
+  height: 300px;
+}
+
+
 .category-card {
   color: white;
   text-align: center;
@@ -16,6 +22,35 @@
   }
 }
 
-.img_show {
-  height: 300px;
+.card {
+ position: relative;
+ padding:50px;
+ background-size: cover;
+ height: 200px;
+ margin: 20px auto;
+ &-bg {
+   background-size: cover;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+ }
+ &-text {
+   top: 10px;
+   left: 10px;
+   color: #FFF;
+ }
+ &-link {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   color: transparent;
+   z-index: 3;
+   &:hover {
+     opacity: 0.9;
+   }
+ }
 }
