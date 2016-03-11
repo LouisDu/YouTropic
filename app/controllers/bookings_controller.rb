@@ -1,23 +1,21 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
-
-  def index
-    @bookings = Booking.all
-  end
+  before_action :set_booking, only: [:show, :edit, :update, :destroy ]
 
   def show
-  end
-
-  def new
-    @booking = Booking.new
+    @bill = (@booking.checkin - @booking.checkout).to_i * @booking.place.price
   end
 
   def create
+    @user = current_user
+    @place = Place.find(params[:place_id])
     @booking = Booking.new(booking_params)
+    @booking.place = @place
+    @booking.user = @user
+
     if @booking.save
-      redirect_to @booking
+      redirect_to place_booking_path(@booking.place, @booking)
     else
-      render :new
+      render 'places/show'
     end
   end
 
@@ -42,7 +40,7 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
 end
