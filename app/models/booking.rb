@@ -7,5 +7,5 @@ class Booking < ActiveRecord::Base
   validates :checkin, presence: true
   validates :checkout, presence: true
   validates :nb_of_traveller, presence: true
-  validates :bill, presence: true
+  # validates :bill, presence: true
 end

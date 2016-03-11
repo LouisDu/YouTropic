@@ -9,10 +9,9 @@
       <li>Category: <%= @place.category.name %></li>
       <li>A few words about my place: <%= @place.description %></li>
     </ul>
-    <%= image_tag @place.photo, :class => "img_show"  %>
-  </div>
 
-  <div class="col-xs-12 col-md-6">
+    <%= image_tag @place.photo, :class => "img_show"  %>
+
     <div id="map" style="width: 120%; height: 500px;"></div>
 
       <% content_for(:after_js) do %>
@@ -28,6 +27,10 @@
         <% end %>
       <% end %>
 
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    <%= render 'bookings/form', place: @place, booking: @booking %>
   </div>
 </div>
 

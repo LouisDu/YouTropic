@@ -8,20 +8,11 @@
 <!-- double line -->
     <hr>
 <!-- form -->
-  <div class="row">
+  <div class="row text-center">
     <div class="col-xs-4 col-xs-offset-4">
-      <form>
-        <div>
-          <input type="text" class="form-control banner-input" id="location" placeholder="Location">
-        </div>
-        <div >
-          <input type="date" class="form-control banner-input" id="checkin" placeholder="Check in">
-        </div>
-        <div >
-          <input type="date" class="form-control banner-input" id="checkout" placeholder="Check out">
-        </div>
-        <button type="submit" class="btn banner-btn">Enjoy</button>
-      </form>
+
+      <%= link_to 'Enjoy', places_path, {class: "btn btn-default banner-btn"} %>
+
     </div>
   </div>
 </div>
