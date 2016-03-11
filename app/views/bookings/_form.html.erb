@@ -1,6 +1,6 @@
 <div class="row padding-medium">
-  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 new-place-form">
-    <%= simple_form_for([place, booking], remote: true) do |f| %>
+  <div class="col-xs-12 new-place-form">
+    <%= simple_form_for([place, booking]) do |f| %>
       <%= f.input :checkin, :label => 'Check in date'%>
       <%= f.input :checkout, :label => 'Check out date'%>
       <%= f.input :nb_of_traveller, :label => 'Nombre of travellers', placeholder: 'How many people coming ?'%>
