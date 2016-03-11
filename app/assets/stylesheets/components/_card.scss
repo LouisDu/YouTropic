@@ -53,6 +53,44 @@
      opacity: 0.9;
    }
  }
+ &-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 90%;
+  padding: 0 0 2px; overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 90%;
+  padding: 0 0 2px;
+  font-weight: bold;
+ }
+ &-description {
+  font-size: 12px;
+  color: #8b8b91 ;
+  margin-top: -10px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+ }
+
+ &-price-place {
+  color:white;
+  left: 0;
+  bottom: 35px;
+  background-color: rgba(60,63,64,0.9);
+  height:35px;
+  width: 55px;
+  position: absolute;
+  opacity:0.8;
+ }
+ &-price-text {
+  position: relative;
+  bottom: 5px
+ }
 }
 
 .place-description {
@@ -61,4 +99,5 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
 

@@ -17,6 +17,7 @@
       <div class="col-md-4 col-sm-12">
         <input type="voyageur" class="checkout tour-target" id= "Voyageur"placeholder="Nombre de voyageurs">
       </div>
+
       <h5> Type de logement :</h5>
         <INPUT type="checkbox" name="choix1" value="1"> Terre
         <INPUT type="checkbox" name="choix2" value="2"> Mer
@@ -32,24 +33,32 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row padded">
    <% @places.each do |place| %>
-     <div class="col-xs-12 col-md-4 text-center">
+     <div class="col-xs-12 col-md-4">
        <div class="card">
          <div class="card-link">
            <%= link_to place_path(place) do %>
            <div class="card-bg" style="background: url(<%= place.photo if place.photo.presence %>); background-size: cover;">
-             <div class="card-text text-center padded">
-               <h1><%= place.name%></h1>
+             <div class="card-price-place">
+               <h4 class= "text-center card-price-text"><%=place.price%>€</h4>
+             </div>
+             <div>
+               <%= link_to profile_path(place.user) do %>
+              <%= image_tag place.user.profile.profile_picture, :class => "avatar-large" %>
+              <% end %>
              </div>
            </div>
            <% end %>
          </div>
        </div>
+        <div>
+          <h4 class="card-name"><%= place.name.capitalize%></h4>
+          <h6 class="card-description"><%= place.description.capitalize%></h6>
+        </div>
      </div>
    <% end %>
  </div>
-
 <div>
  <ul class="pagination">
     <li>

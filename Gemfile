@@ -6,6 +6,7 @@ gem "gmaps4rails"
 gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'devise'
+gem 'faker'
 gem 'figaro'
 gem 'fog'
 gem 'mini_magick'
