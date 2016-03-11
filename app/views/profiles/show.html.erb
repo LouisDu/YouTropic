@@ -17,6 +17,18 @@
 
     <%= link_to edit_user_profile_path(@profile.user, @profile), {class: "btn btn-primary form-btn "} do %>   <h4>Edit your profile </h4>
     <% end %>
+
+    <div class="padding-medium">
+        <% if current_user.bookings.blank? %>
+          You don't have any booking
+        <% else %>
+          <ol>
+          <% current_user.bookings.each do |booking| %>
+            <li><%= render 'bookings/attributes', booking: booking %></li>
+          <% end %>
+          </ol>
+        <% end %>
+    </div>
   </div>
 
   <div class='col-xs-12 col-md-5 col-md-offset-1'>
@@ -40,8 +52,8 @@
           <h6 class="card-description"><%= place.description.capitalize%></h6>
         </div>
       </div>
-      <%= link_to new_place_path, {class: "btn btn-primary form-btn "} do %> <h4>Create a new place </h4>
       <% end %>
+      <%= link_to new_place_path, {class: "btn btn-primary form-btn "} do %> <h4>Create a new place </h4>
       <% end %>
     <% else %>
       <%= link_to new_place_path, {class: "btn btn-primary form-btn "} do %> <h4>Create a new place </h4>

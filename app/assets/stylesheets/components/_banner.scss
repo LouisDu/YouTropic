@@ -33,7 +33,11 @@
   }
   .banner-btn {
     background: transparent;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px 5px 5px;
     border: 1px solid white;
+    text-decoration: none;
     &:hover {
       color: grey;
       background: rgba(255, 255, 255, 0.65) none repeat scroll 0%;
