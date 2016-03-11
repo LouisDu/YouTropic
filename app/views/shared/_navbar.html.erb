@@ -18,6 +18,7 @@
           <!-- <li class="active"> -->
           <li><%= link_to 'Become Host', new_place_path %> </li>
           <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </li>
+          <li><%= link_to 'Places', places_path %> </li>
           <li>
             <%= link_to profile_path(current_user), class: "navbar-wagon-brand" do %>
               <%= image_tag current_user.profile.profile_picture %>
@@ -28,6 +29,7 @@
         <ul class="nav navbar-nav navbar-right">
           <!-- <li class="active"> -->
           <li><%= link_to 'Become Host', new_user_registration_path %> </li>
+          <li><%= link_to 'Places', places_path %> </li>
           <li><%= link_to 'Sign up', new_user_registration_path %> </li>
           <li><%= link_to 'Sign in', new_user_session_path %> </li>
 
