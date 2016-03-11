@@ -3,8 +3,13 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 50px;
+  width: 56px;
+  height:56px;
   border-radius: 50%;
+  position:absolute;
+  right:10px;
+  bottom: -20px;
+  border: white 3px solid;
 }
 .avatar-bordered {
   width: 30px;
@@ -24,3 +29,4 @@
   border: white 1px solid;
   margin: 40px 0px;
 }
+
