@@ -40,9 +40,11 @@
           <h6 class="card-description"><%= place.description.capitalize%></h6>
         </div>
       </div>
+      <%= link_to new_place_path, {class: "btn btn-primary form-btn "} do %> <h4>Create a new place </h4>
+      <% end %>
       <% end %>
     <% else %>
-      <%= link_to new_user_registration_path, {class: "btn btn-primary form-btn "} do %> <h4>Create a new place </h4>
+      <%= link_to new_place_path, {class: "btn btn-primary form-btn "} do %> <h4>Create a new place </h4>
       <% end %>
     <% end %>
   </div>
